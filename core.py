@@ -148,31 +148,3 @@ class CorruptionCaseManager:
             deleted = cursor.rowcount > 0
             conn.commit()
             return deleted
-
-    def get_statistics(self) -> dict:
-        with self.db.get_connection() as conn:
-            cursor = conn.cursor()
-            
-            # Get total cases and loss amount
-            cursor.execute("SELECT COUNT(*), COALESCE(SUM(loss_amount), 0) FROM cases")
-            total_cases, total_loss = cursor.fetchone()
-            
-            # Get cases by type
-            cursor.execute("SELECT case_type, COUNT(*) FROM cases GROUP BY case_type")
-            cases_by_type = {row[0]: row[1] for row in cursor.fetchall()}
-            
-            # Get cases by status
-            cursor.execute("SELECT status, COUNT(*) FROM cases GROUP BY status")
-            cases_by_status = {row[0]: row[1] for row in cursor.fetchall()}
-            
-            # Get cases by year
-            cursor.execute("SELECT year, COUNT(*) FROM cases GROUP BY year")
-            cases_by_year = {str(row[0]): row[1] for row in cursor.fetchall()}
-            
-            return {
-                "total_cases": total_cases,
-                "total_loss": float(total_loss),
-                "cases_by_type": cases_by_type,
-                "cases_by_status": cases_by_status,
-                "cases_by_year": cases_by_year
-            }

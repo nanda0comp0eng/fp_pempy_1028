@@ -21,12 +21,6 @@ class CorruptionCaseClient:
         response.raise_for_status()
         return response.json()
 
-    def get_statistics(self) -> Dict:
-        """Mendapatkan statistik kasus"""
-        response = requests.get(f"{self.base_url}/cases/stats")
-        response.raise_for_status()
-        return response.json()
-
     def get_case_types(self) -> List[str]:
         """Mendapatkan daftar jenis kasus"""
         response = requests.get(f"{self.base_url}/cases/types")

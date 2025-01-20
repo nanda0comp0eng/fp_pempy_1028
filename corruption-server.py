@@ -21,14 +21,6 @@ def get_case(case_id: int) -> dict:
         raise HTTPException(status_code=404, detail="Case not found")
     return case
 
-@app.get("/cases/stats")
-def get_statistics() -> Dict:
-    """Statistik dan ringkasan"""
-    try:
-        stats = case_manager.get_statistics()
-        return JSONResponse(content=stats)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/cases/types")
 def get_case_types():
