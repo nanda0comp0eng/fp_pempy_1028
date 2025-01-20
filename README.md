@@ -21,7 +21,7 @@ A comprehensive system for managing and tracking corruption cases, including cas
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/corruption-case-management.git
+git clone https://github.com/nanda0comp0eng/fp_pempy_1028
 cd corruption-case-management
 ```
 
