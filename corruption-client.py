@@ -179,9 +179,11 @@ def main():
                     # Get case details first
                     case_data = client.get_case(case_id)
                     confirm = input(f"Anda yakin ingin menghapus kasus '{case_data['description']}'? (Y/n): ")
-                    if confirm.lower() == '':
+                    if confirm.lower() in ['y', '']:
                         result = client.delete_case(case_id)
                         print("\nKasus berhasil dihapus")
+                    elif confirm.lower() == 'n':
+                        print("\nPenghapusan kasus dibatalkan")
                 except requests.exceptions.HTTPError as e:
                     if e.response.status_code == 404:
                         print("\nError: Kasus tidak ditemukan")
