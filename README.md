@@ -7,7 +7,6 @@ A comprehensive system for managing and tracking corruption cases, including cas
 
 - Track multiple types of corruption cases (procurement, bribery, gratification, money laundering)
 - Maintain case status and timeline
-- Calculate financial impact and statistics
 - RESTful API for integration
 - Command-line interface for easy management
 - SQLite database for data persistence
@@ -62,13 +61,11 @@ python corruption-client.py
    - Add new cases
    - Update case status
    - Delete cases
-   - View statistics
 
 ## API Endpoints
 
 - `GET /cases` - Get all cases
 - `GET /cases/{case_id}` - Get specific case details
-- `GET /cases/stats` - Get case statistics
 - `GET /cases/types` - Get available case types
 - `POST /cases` - Create new case
 - `PUT /cases/{case_id}` - Update case status
