@@ -22,7 +22,7 @@ A comprehensive system for managing and tracking corruption cases, including cas
 1. Clone the repository:
 ```bash
 git clone https://github.com/nanda0comp0eng/fp_pempy_1028
-cd corruption-case-management
+cd fp_pempy_1028
 ```
 
 2. Install required dependencies:
@@ -30,7 +30,7 @@ cd corruption-case-management
 pip install -r requirements.txt
 ```
 
-3. Initialize the database:
+3. Initialize the database(optional):
 ```bash
 python databases.py
 ```
