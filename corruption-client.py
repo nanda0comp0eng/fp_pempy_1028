@@ -54,8 +54,7 @@ def print_menu():
     print("3. Tambah Kasus Baru")
     print("4. Update Status Kasus")
     print("5. Hapus Kasus")
-    print("6. Lihat Statistik")
-    print("7. Keluar")
+    print("6. Keluar")
     print("=====================================")
 
 def get_case_input() -> Dict:
@@ -186,13 +185,8 @@ def main():
                 except ValueError:
                     print("\nError: ID kasus harus berupa angka")
                 
-            elif choice == "6":
-                # Lihat statistik
-                stats = client.get_statistics()
-                print("\nStatistik Kasus:")
-                print(json.dumps(stats, indent=2, ensure_ascii=False))
                 
-            elif choice == "7":
+            elif choice == "6":
                 # Keluar
                 print("\nTerima kasih telah menggunakan sistem ini.")
                 sys.exit(0)
